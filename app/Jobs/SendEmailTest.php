@@ -1,0 +1,57 @@
+<?php
+
+namespace App\Jobs;
+
+use Illuminate\Bus\Queueable;
+use Illuminate\Queue\SerializesModels;
+use Illuminate\Queue\InteractsWithQueue;
+use Illuminate\Contracts\Queue\ShouldQueue;
+use Illuminate\Foundation\Bus\Dispatchable;
+use App\Mail\SendEmailTest;
+use Mail;
+
+class SendEmailJob implements ShouldQueue
+{
+    use Dispatchable, InteractsWithQueue, Queueable, SerializesModels;
+    protected $details;
+
+    /**
+     * Create a new job instance.
+     *
+     * @return void
+     */
+    // public function __construct()
+    // {
+        
+    // }
+    public function __construct($details)
+    {
+        $this->details = $details;
+    }
+
+    /**
+     * Execute the job.
+     *
+     * @return void
+     */
+    public function handle()
+    {
+        // $data = [
+        //     'name'   => 'abid shiddique',
+        //     'email_to'   => 'abidshiddique17@gmail.com',
+        //     'email_from'   => 'info@bjee.com.bd',
+        //     'subject'   => 'Congratulation!',
+        // ];
+        
+        // Mail::send([], $data, function ($message) use ($data) {            
+        //     $message->to($data['email_to']);
+        //     $message->from($data['email_from'],'BAES');
+        //     $message->subject($data['subject']);
+        //     $message->setBody('This is a body');
+        // });
+        // dd($this->details);
+        $email = new SendEmailTest();
+        Mail::to($this->details)->send($email);
+        // Mail::to('abidshiddique17@gmail.com')->send($email);
+    }
+}

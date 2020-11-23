@@ -1,0 +1,2 @@
+[12-Jan-2020 13:18:21 UTC] PHP Fatal error:  Out of memory (allocated 4194304) (tried to allocate 65536 bytes) in /home/bjeecomb/public_html/vendor/composer/ClassLoader.php on line 444
+[02-Mar-2020 06:53:05 UTC] PHP Fatal error:  Method Illuminate\View\View::__toString() must not throw an exception, caught ErrorException: Undefined variable: authors (View: /home/bjeecomb/public_html/resources/views/pdf/cover.blade.php) in /home/bjeecomb/public_html/vendor/dompdf/dompdf/src/Dompdf.php on line 429

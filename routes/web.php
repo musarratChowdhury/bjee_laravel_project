@@ -121,6 +121,13 @@ Route::delete('/editor/delete-instruction/{id}', 'utilityController@destroy')->n
 Route::get('/editor/show-instruction/{id}', 'utilityController@show')->name('editor.show-instruction');
 Route::put('/editor/add-instruction/{id}','utilityController@update')->name('editor.update-instruction');
 
+Route::get('/editor/ed-board-position','Ed_board_pos_controller@index')->name('editor.ed-board-position');
+Route::get('/editor/add-ed-board-position','Ed_board_pos_controller@create')->name('editor.create-ed-board-position');
+Route::post('/editor/add-ed-board-position','Ed_board_pos_controller@store')->name('editor.store-ed-board-position');
+Route::get('/editor/edit-ed-board-position/{id}','Ed_board_pos_controllerr@edit')->name('editor.edit-ed-board-position');
+Route::delete('/editor/delete-ed-board-position/{id}', 'Ed_board_pos_controller@destroy')->name('editor.delete-ed-board-position');
+Route::get('/editor/show-ed-board-position/{id}', 'Ed_board_pos_controller@show')->name('editor.show-ed-board-position');
+Route::put('/editor/add-ed-board-position/{id}','Ed_board_pos_controller@update')->name('editor.update-ed-board-position');
 
 
 Route::get('/archive','JournalController@archive')->name('archive');

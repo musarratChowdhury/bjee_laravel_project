@@ -124,11 +124,18 @@ Route::put('/editor/add-instruction/{id}','utilityController@update')->name('edi
 Route::get('/editor/ed-board-position','Ed_board_pos_controller@index')->name('editor.ed-board-position');
 Route::get('/editor/add-ed-board-position','Ed_board_pos_controller@create')->name('editor.create-ed-board-position');
 Route::post('/editor/add-ed-board-position','Ed_board_pos_controller@store')->name('editor.store-ed-board-position');
-Route::get('/editor/edit-ed-board-position/{id}','Ed_board_pos_controllerr@edit')->name('editor.edit-ed-board-position');
+Route::get('/editor/edit-ed-board-position/{id}','Ed_board_pos_controller@edit')->name('editor.edit-ed-board-position');
 Route::delete('/editor/delete-ed-board-position/{id}', 'Ed_board_pos_controller@destroy')->name('editor.delete-ed-board-position');
 Route::get('/editor/show-ed-board-position/{id}', 'Ed_board_pos_controller@show')->name('editor.show-ed-board-position');
 Route::put('/editor/add-ed-board-position/{id}','Ed_board_pos_controller@update')->name('editor.update-ed-board-position');
 
+Route::get('/editor/ed-board-position-details','Ed_board_pos_detail_controller@index')->name('editor.ed-board-position-details');
+Route::get('/editor/add-ed-board-position-details','Ed_board_pos_detail_controller@create')->name('editor.create-ed-board-position-details');
+Route::post('/editor/add-ed-board-position-details','Ed_board_pos_detail_controller@store')->name('editor.store-ed-board-position-details');
+Route::get('/editor/edit-ed-board-position-details/{id}','Ed_board_pos_detail_controller@edit')->name('editor.edit-ed-board-position-details');
+Route::delete('/editor/delete-ed-board-position-details/{id}', 'Ed_board_pos_detail_controller@destroy')->name('editor.delete-ed-board-position-details');
+Route::get('/editor/show-ed-board-position-details/{id}', 'Ed_board_pos_detail_controller@show')->name('editor.show-ed-board-position-details');
+Route::put('/editor/add-ed-board-position-details/{id}','Ed_board_pos_detail_controller@update')->name('editor.update-ed-board-position-details');
 
 Route::get('/archive','JournalController@archive')->name('archive');
 Route::get('/volume/{id}','JournalController@journalsInVolume')->name('journalsInVolume');
